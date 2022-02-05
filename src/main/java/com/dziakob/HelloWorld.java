@@ -16,23 +16,9 @@ public class HelloWorld {
 
     public static void main(String[] args) {
 
-        Properties props = new Properties();
-        InputStream is = HelloWorld.class.getResourceAsStream("/log4j2.properties");
-        try{
-            props.load(is);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
         long counter = 0;
         while (true) {
-            System.out.println("Hello World");
+            System.out.println("Hello World " + counter + " time");
             logger.log(Level.DEBUG, "jak leci po raz: " + counter);
             logger.log(Level.ERROR, "jak leci po errorze raz: " + counter);
             logger.log(Level.INFO, "jak leci po info raz: " + counter);
